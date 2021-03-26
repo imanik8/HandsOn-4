@@ -1,11 +1,21 @@
 import React from "react";
-import "./style.css";
+import FormCode from "./FormCode";
 
-export default function App() {
-  return (
-    <div>
-      <h1>Hello StackBlitz!</h1>
-      <p>Start editing to see some magic happen :)</p>
-    </div>
-  );
+class App extends React.Component {
+  submit = values => {
+    alert("submitted");
+    console.log(values);
+  };
+  render() {
+    return (
+      <div className="container">
+        <h3 className="jumbotron">
+          Form Validation <span className="text-danger">*</span>
+        </h3>
+        <FormCode onSubmit={this.submit} />
+      </div>
+    );
+  }
 }
+
+export default App;
